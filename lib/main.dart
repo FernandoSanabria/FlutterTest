@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarBrightness: Brightness.light));
@@ -23,22 +22,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      // theme: ThemeData(fontFamily: "Alata"),
       home: Scaffold(
-          // appBar: AppBar(
-          //   title: Text('Material App Bar'),
-          //   centerTitle: true,
-          //   leading: Icon(Icons.arrow_back_ios),
-          //   backgroundColor: Colors.red[500],
-          // ),
-          body:
-              // Description("Mallasia",3,dummy),
-              Stack(
+          body: Stack(
         children: [
           ListView(
             children: [Description("Mallasia", 3, dummy), ReviewList()],
           ),
-          // GradientBack('Popular parameter'),
           HeaderAppBar(),
         ],
       )),

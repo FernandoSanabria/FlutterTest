@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'button_purple.dart';
 class Description extends StatelessWidget {
 
 
@@ -78,7 +78,8 @@ Description(this.namePlace,this.star, this.descriptionPlace);
     );
 
     final completedDescription = Column(
-      children: [titleStars, description],
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [titleStars, description,ButtonPurple('Ir allá'), SizedBox(height: 10.0,)],
     );
 
     return completedDescription;

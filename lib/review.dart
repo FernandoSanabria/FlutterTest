@@ -21,12 +21,11 @@ class Review extends StatelessWidget {
       ),
     );
 
-final star = Container(
+    final star = Container(
         child: Icon(
-          Icons.star,
-          color: Colors.amber[600],
-        ));
-
+      Icons.star,
+      color: Colors.amber[600],
+    ));
 
     final userInfo = Row(
       children: [
@@ -44,9 +43,11 @@ final star = Container(
             textAlign: TextAlign.left,
           ),
         ),
-        star,star,star,star,star,
-
-
+        star,
+        star,
+        star,
+        star,
+        star,
       ],
     );
 
