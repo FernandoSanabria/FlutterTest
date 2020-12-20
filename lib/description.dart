@@ -16,7 +16,7 @@ Description(this.namePlace,this.star, this.descriptionPlace);
 
     final startBorder = Container(
       margin: EdgeInsets.only(
-        top: 328.0,
+        top: 303.0,
         right: 3.0
       ),
       child: Icon(
@@ -29,7 +29,7 @@ Description(this.namePlace,this.star, this.descriptionPlace);
 
     final startHalf = Container(
       margin: EdgeInsets.only(
-        top: 328.0,
+        top: 303.0,
         right: 3.0
       ),
       child: Icon(
@@ -42,7 +42,7 @@ Description(this.namePlace,this.star, this.descriptionPlace);
 
 
     final stars = Container(
-        margin: EdgeInsets.only(top: 328.0, right: 3.0),
+        margin: EdgeInsets.only(top: 303.0, right: 3.0),
         child: Icon(
           Icons.star,
           color: Colors.amber[600],
@@ -61,7 +61,7 @@ Description(this.namePlace,this.star, this.descriptionPlace);
       children: [
         Container(
           margin: EdgeInsets.only(
-            top: 325.0,
+            top: 300.0,
             left: 25.0,
             right: 25.0,
           ),
