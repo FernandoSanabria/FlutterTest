@@ -9,7 +9,7 @@ class HeaderEmailAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        GradientEmail('Creators'),
+        GradientEmail('Creaators'),
       ],
     );
   }

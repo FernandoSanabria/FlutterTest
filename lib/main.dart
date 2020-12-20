@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tutorial_application/description.dart';
 import 'package:tutorial_application/gradient_back.dart';
-import 'package:tutorial_application/header_appbar.dart';
+import 'package:tutorial_application/header_email_appbar.dart';
 import 'package:tutorial_application/review_list.dart';
+import 'package:tutorial_application/card_email.dart';
+import 'package:tutorial_application/card_email_list.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,10 +28,11 @@ class MyApp extends StatelessWidget {
           body: Stack(
         children: [
           ListView(
-            children: [Description("Mallasia", 3, dummy), ReviewList()],
+            children: [
+             MailBoxList(),
+            ],
           ),
-          HeaderAppBar(),
-          
+          HeaderEmailAppBar(),
         ],
       )),
     );

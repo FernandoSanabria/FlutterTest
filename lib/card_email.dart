@@ -1,90 +1,65 @@
 import 'package:flutter/material.dart';
 
 class MailBox extends StatelessWidget {
-  String pathImage = "assets/images/hoodie.png";
-  String senderName = "Pepito";
-  String subjectEmail = "Experience 30 years";
-  bool readEmail = false;
+  String profileImage = "";
+  String profileName = "";
+  String profileResume = "";
+  bool redMail = true;
 
-  MailBox(this.pathImage, this.senderName, this.subjectEmail, this.readEmail);
+  MailBox(
+      this.profileImage, this.profileName, this.profileResume, this.redMail);
 
   @override
   Widget build(BuildContext context) {
     final photo = Container(
-      margin: EdgeInsets.only(top: 20, left: 20),
+      width: 60.0,
+      height: 60.0,
       decoration: BoxDecoration(
           shape: BoxShape.circle,
-          image:
-              DecorationImage(fit: BoxFit.cover, image: AssetImage(pathImage))),
+          image: DecorationImage(
+              fit: BoxFit.cover, image: AssetImage(profileImage))),
     );
 
-    final profileInfo = Column(
+    final mailIcon = Container(
+      width: 40.0,
+      height: 40.0,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: redMail ? Colors.red : Color(0xFFCCCCCC),
+      ),
+      child: Icon(
+        Icons.mail,
+        color: redMail ? Colors.white : Colors.black38,
+        size: 20.0,
+      ),
+    );
+
+    final card = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(
-          senderName,
-          textAlign: TextAlign.left,
-          style: TextStyle(
-              fontWeight: FontWeight.w900,
-              fontSize: 18.0,
-              color: Colors.black38),
-        ),
-        Text(
-          subjectEmail,
-          textAlign: TextAlign.left,
-          style: TextStyle(
-            color: Colors.grey,
-            fontSize: 15,
+        ListTile(
+          trailing: mailIcon,
+          leading: photo,
+          title: Text(
+            profileName,
+            textAlign: TextAlign.left,
+            style: TextStyle(
+                fontWeight: FontWeight.w900,
+                fontSize: 18.0,
+                color: Colors.black54),
           ),
+          subtitle: Text(
+            profileResume,
+            style: TextStyle(color: Colors.grey, fontSize: 14.0),
+            textAlign: TextAlign.left,
+          ),
+        ),
+        Divider(
+          color: Colors.grey,
         )
       ],
     );
 
-
-  final mailIcon = Container(
-      width: 15.0,
-      height: 15.0,
-      decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: !readEmail ? Colors.red : Colors.grey[300]),
-      child: Icon(
-        Icons.email,
-        color: !readEmail ? Colors.white : Colors.black38,
-        size: 10,
-      ),
-    );
-
-
-    final profileInfoTile = Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        ListTile(
-          leading: photo,
-          trailing: mailIcon,
-          title: Text(senderName,
-          textAlign: TextAlign.left,
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w900,
-            color: Colors.black87,
-          ),         
-          ),
-          subtitle: Text(
-            subjectEmail,
-            textAlign: TextAlign.left,
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.w300,
-              color: Colors.grey
-            ),
-          ),
-        ),
-      ],
-    );
-
-  
-    return Container(
-      child: null,
-    );
+    return card;
   }
 }
